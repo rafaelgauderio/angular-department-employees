@@ -9,4 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend-funcionarios-departamentos';
+  name = 'Rafael de Luca'
 }
