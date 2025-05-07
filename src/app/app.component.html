@@ -1,26 +1,35 @@
-
-<style> 
+<style>
+  html {
+    height: 98vh;    
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+    background-color: azure;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
 
   main {
     display: flex;
-    flex-direction: column;    
-    min-height: 100%;    
-    padding: 1rem;
+    flex-direction: column;     
     background-color: cyan;
     align-items: center;
     border-radius: 5px;
-  }  
+    border: 1px solid blue;
+    margin: 5px;
+  }
 
   h1 {
     font-size: 2.125rem;
-    color: var(--gray-900);          
-    font-family:  Helvetica, Arial, sans-serif;    
-  }   
-  
+    color: var(--gray-900);
+    font-family: Helvetica, Arial, sans-serif;
+  }
 </style>
-
-<main class="main">
-      <h1>Projeto frontend funcionários e departamentos</h1>   
-      <h3>Desenvolvido por {{name}}</h3>   
+<html>
+  <main class="main">
+    <app-header></app-header>
+    <app-hello></app-hello>
+    <h1>Projeto frontend funcionários e departamentos</h1>
+    <h3>Desenvolvido por {{name}}</h3>
   </main>
-    
+</html>
