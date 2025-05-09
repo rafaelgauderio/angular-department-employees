@@ -12,5 +12,10 @@ import { HeaderComponent } from "./header/header.component";
 })
 export class AppComponent {
   title = 'frontend-funcionarios-departamentos';
-  name = 'Rafael de Luca'
+  name = 'Rafael de Luca';  
+  year = 2025;
+
+  getYear() {
+    return this.year;
+  }
 }
