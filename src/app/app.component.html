@@ -51,12 +51,12 @@
       <input type="text" 
         clas="form-control"
         placeholder="Inform your name"
-        (input)="updateEmployee($event)" />      
+        #nameInput />      
     </div>
     <button 
       type="button" 
       class="btn btn-primary"
-      on-click="addEmployee()">
+      on-click="addEmployee(nameInput.value)">
       Add Employee
     </button>
     <button 

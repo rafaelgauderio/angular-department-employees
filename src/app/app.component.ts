@@ -18,8 +18,10 @@ export class AppComponent {
   getYear() {
     return this.year;
   }
-  addEmployee() {
-    console.log(`Adding new employee ${this.name}`);
+  addEmployee(nameInput : string) {
+    console.log(`Adding new employee ${nameInput}`);
+    this.name = nameInput;
+
   }
   removeEmployee () {
     console.log(`Removind Employee ${this.name}`);
