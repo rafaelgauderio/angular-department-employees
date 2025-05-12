@@ -18,4 +18,14 @@ export class AppComponent {
   getYear() {
     return this.year;
   }
+  addEmployee() {
+    console.log(`Adding new employee ${this.name}`);
+  }
+  removeEmployee () {
+    console.log(`Removind Employee ${this.name}`);
+  }
+  updateEmployee (event : any) {
+    this.name = event.target.value;
+  }
+
 }
