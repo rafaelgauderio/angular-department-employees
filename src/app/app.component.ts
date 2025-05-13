@@ -12,22 +12,27 @@ import { HeaderComponent } from "./header/header.component";
 })
 export class AppComponent {
   title = 'frontend-funcionarios-departamentos';
-  name = 'Rafael de Luca';  
+  name = '';  
   year = 2025;
+  nameInsert = 'Rafael de Luca';
 
   getYear() {
     return this.year;
   }
-  addEmployee(nameInput : string) {
-    console.log(`Adding new employee ${nameInput}`);
-    this.name = nameInput;
+  addEmployee(name : string) {
+    console.log(`Adding new employee ${name}`);
+    this.nameInsert = name;
+    this.name = "";
 
   }
   removeEmployee () {
     console.log(`Removind Employee ${this.name}`);
+    this.name=''
+    this.nameInsert = ""
   }
   updateEmployee (event : any) {
     this.name = event.target.value;
   }
+
 
 }
