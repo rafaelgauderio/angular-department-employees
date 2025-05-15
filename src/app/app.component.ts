@@ -6,9 +6,9 @@ import { HeaderComponent } from "./header/header.component";
 @Component({
   selector: 'app-root',
   //imports: [RouterOutlet],
+  standalone: false,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [HelloComponent, HeaderComponent]
+  styleUrl: './app.component.css', 
 })
 export class AppComponent {
   title = 'frontend-funcionarios-departamentos';
