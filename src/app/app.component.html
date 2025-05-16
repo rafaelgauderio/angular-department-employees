@@ -1,73 +1,64 @@
-<style>
-  html {
-    height: 98vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: azure;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    background-color: cyan;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid blue;
-    margin: 5px;
-  }
-
-  h1 {
-    font-size: 2.125rem;
-    color: var(--gray-900);
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  input {
-    padding: 5px;
-    margin-left: 10px;
-  }
-
-  button {
-    margin-right: 10px;
-  }
-</style>
 <html>
-  <main class="main">
-    <app-header></app-header>
-    <app-hello></app-hello>
-    <h1>Projeto frontend funcionários e departamentos</h1>
-    <h3>Desenvolvido por {{nameInsert}} em {{year}}</h3>
-    <h3>Testing sum with biding: {{ 17 + 12 }}</h3>
-    <h3>The current year is {{getYear()}}!</h3>
-  </main>
   <div class="container">
-    <div class="alert alert-success" role="alert">
-      Employee add: <strong>{{nameInsert}}</strong>
+    <h1>Projeto frontend funcionários e departamentos</h1>
+    <div class="alert alert-success" role="alert" *ngIf="added">
+      Employee add (ngIf): <strong>name: {{nameInsert}}, age: {{age}}</strong>
+    </div>
+    <div class="alert alert-warning" role="alert" [hidden]="!added">
+      Employee add (hidden): <strong>name: {{nameInsert}}, age: {{age}}</strong>
     </div>
     <div class="form-group">
       <label>Name: </label>
-      <input type="text" 
+      <input
+        type="text"
         class="form-control"
         placeholder="Inform your name"
         #nameInput
         (input)="updateEmployee($event)"
-        [value]="name" />      
+        [value]="name"
+        (focus)="added=false"
+      />
+      <label>Age: </label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Inform your age"
+        [(ngModel)]="age"
+      />
     </div>
-    <button 
-      type="button" 
-      class="btn btn-primary"
-      on-click="addEmployee(nameInput.value)"
-      [disabled]="name.length==0">
-      Add Employee
-    </button>
-    <button 
-      type="button" 
-      class="btn btn-danger"
-      (click)="removeEmployee()"
-      [disabled]="nameInsert.length==0">
-      Remove Employee
-    </button>
+    <div class="buttons">
+      <button
+        type="button"
+        class="btn btn-primary"
+        on-click="addEmployee(nameInput.value)"
+        [disabled]="name.length==0"
+      >
+        Add Employee
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="make_birthday()"
+        [disabled]="nameInsert.length==0"
+      >
+        Make a Birthday
+      </button>
+      <button type="button" class="btn btn-danger" (click)="removeEmployee()">
+        Clear Data
+      </button>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-3" *ngFor="let emp of emplooyees">
+        <div class="card">
+          <img
+            src="https://randomuser.me/api/portraits/men/17.jpg"
+            class="card-img-top"
+            alt="..."
+            style="margin-bottom: 5px;"
+          />
+          <div class="card-block">{{emp}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </html>

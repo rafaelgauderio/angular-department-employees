@@ -1,0 +1,42 @@
+html {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: azure;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: cyan;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+h1 {
+  font-size: 2.125rem;
+  color: var(--gray-900);
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-top: 10pxgit;
+}
+input {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+button {
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
