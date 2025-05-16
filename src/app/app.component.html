@@ -8,52 +8,33 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Inform your name"
-        #nameInput
-        (input)="updateEmployee($event)"
-        [value]="name"
-        (focus)="added=false"
+        placeholder="Inform your name"   
+        [(ngModel)]="name"       
       />
-      <label>Age: </label>
+      <label>Department: </label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         placeholder="Inform your age"
-        [(ngModel)]="age"
+        [(ngModel)]="department"
       />
     </div>
     <div class="buttons">
       <button
         type="button"
         class="btn btn-primary"
-        on-click="addEmployee(nameInput.value)"
+        (click)="addEmployee()"
         [disabled]="name.length==0"
       >
         Add Employee
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="make_birthday()"
-        [disabled]="nameInsert.length==0"
-      >
-        Make a Birthday
-      </button>
+      </button>     
       <button type="button" class="btn btn-danger" (click)="removeEmployee()">
         Clear Data
       </button>
     </div>
     <div class="row m-auto" style="margin-top: 10px;">
       <div class="col-3 mb-2 border border-success rounded" *ngFor="let emp of emplooyees">
-        <div class="card">
-          <img
-            src="https://randomuser.me/api/portraits/men/{{emp.id}}.jpg"
-            class="card-img-top"
-            alt="..."
-            style="margin-bottom: 5px;"
-          />
-          <div class="card-block">Name: {{emp.nameInsert}}</div>
-        </div>
+        <app-employee-card [employee]="emp"></app-employee-card>
       </div>
     </div>
   </div>

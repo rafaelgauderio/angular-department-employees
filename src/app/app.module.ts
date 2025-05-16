@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HelloComponent } from './hello/hello.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { EmployeeCardComponent } from './employee-card/employee-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, HelloComponent
+    AppComponent, HeaderComponent, HelloComponent, EmployeeCardComponent
 
   ],
   imports: [

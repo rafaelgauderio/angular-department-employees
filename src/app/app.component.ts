@@ -12,45 +12,28 @@ import { HeaderComponent } from "./header/header.component";
 })
 export class AppComponent {
   title = 'frontend-funcionarios-departamentos';
-  name = '';
-  year = 2025;
-  nameInsert = '';
-  age = 0;
+  name = ''; 
+  department = "";
   added = false;
   emplooyees: any  = [];
   id=0;
   lastId = 1;
+  
 
-  getYear() {
-    return this.year;
-  }
-
-  addEmployee(name: string) {
+  addEmployee() {
     //console.log(`Adding new employee ${name}`);        
     this.added = true;
     this.emplooyees.push({
-      nameInsert: this.name,
+      name: this.name,
+      department: this.department,
       id: ++this.lastId
-  });
-
-    this.name="";
-
+  });    
    
   }
 
   removeEmployee() {
     //console.log(`Removind Employee ${this.name}`);
     this.name = ''
-    this.nameInsert = ""
-    this.age = 0;
-  }
-  updateEmployee(event: any) {
-    this.name = event.target.value;
-  }
-
-  make_birthday() {
-    this.age++;
-  }
-
+  }   
 
 }
