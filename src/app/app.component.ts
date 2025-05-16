@@ -20,6 +20,10 @@ export class AppComponent {
   emplooyees: string [] = [];
   lastId = 1;
 
+  getYear() {
+    return this.year;
+  }
+
   addEmployee(name: string) {
     //console.log(`Adding new employee ${name}`);
     this.nameInsert = name;    

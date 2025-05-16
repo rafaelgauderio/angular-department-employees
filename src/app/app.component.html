@@ -1,4 +1,12 @@
 <html>
+  <main class="main">
+    <app-header></app-header>
+    <app-hello></app-hello>
+    <h1>Projeto frontend funcionários e departamentos</h1>
+    <h3>Desenvolvido por {{nameInsert}} em {{year}}</h3>
+    <h3>Testing sum with biding: {{ 17 + 12 }}</h3>
+    <h3>The current year is {{getYear()}}!</h3>
+  </main>
   <div class="container">
     <h1>Projeto frontend funcionários e departamentos</h1>
     <div class="alert alert-success" role="alert" *ngIf="added">

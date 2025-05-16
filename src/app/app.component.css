@@ -22,11 +22,12 @@ h1 {
   color: var(--gray-900);
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
-  margin-top: 10pxgit;
+  margin-top: 10px;
 }
 input {
   padding: 5px;
   margin-left: 10px;
+  margin-bottom: 5px;  
 }
 
 button {
