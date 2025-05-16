@@ -11,33 +11,15 @@ import { HeaderComponent } from "./header/header.component";
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'frontend-funcionarios-departamentos';
-  name = '';
-  department = "";
-  added = false;
-  emplooyees: Employee[] = [];
-  id = 0;
-  lastId = 1;
+    title = 'frontend-funcionarios-departamentos'; 
+   emplooyees: Employee[] = [];
 
+   whenAdding (emp : Employee) {
+    this.emplooyees.push(emp);
 
-  addEmployee() {
-    //console.log(`Adding new employee ${name}`);        
-    this.added = true;
-    this.emplooyees.push({
-      name: this.name,
-      department: this.department,
-      id: ++this.lastId
-    });
-  }
-
-  removeEmployee() {
-    //console.log(`Removind Employee ${this.name}`);
-    this.name = '';
-    this.department ='';
-  }
+   }
 }
-
-export interface Employee {
+interface Employee {
   id: number,
   name: string,
   department: string

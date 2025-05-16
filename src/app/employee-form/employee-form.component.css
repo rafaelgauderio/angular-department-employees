@@ -1,0 +1,16 @@
+input {
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+button {
+  margin: 10px 20px 20px 0;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

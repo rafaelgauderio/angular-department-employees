@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-employee-card',
   standalone: false,
@@ -7,6 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './employee-card.component.css'
 })
 export class EmployeeCardComponent {
-    @Input() employee : any = {      
-  };
+    @Input() employee : any = {
+      id: 0,
+      name: '',
+      department: ''
+    };
 }

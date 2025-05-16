@@ -1,42 +1,14 @@
 <html>
-  <main class="main">  
-    <h1>Projeto frontend funcionários e departamentos</h1>    
+  <main class="main">
+    <h1>Projeto frontend funcionários e departamentos</h1>
   </main>
-  <div class="container"> 
-    <div class="alert alert-success" role="alert" [hidden]="!added">
-      Employee added: Name: <strong>{{name}}</strong> , Department: <strong>{{department}}</strong>
-    </div>  
-    <div class="form-group">
-      <label>Name: </label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Inform your name"   
-        [(ngModel)]="name"       
-      />
-      <label>Department: </label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Inform your age"
-        [(ngModel)]="department"
-      />
-    </div>
-    <div class="buttons">
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="addEmployee()"
-        [disabled]="name.length==0"
-      >
-        Add Employee
-      </button>     
-      <button type="button" class="btn btn-danger" (click)="removeEmployee()">
-        Clear Data
-      </button>
-    </div>
+  <div class="container">
+    <app-employee-form (employeeAdded)="whenAdding($event)"></app-employee-form>
     <div class="row m-auto" style="margin-top: 10px;">
-      <div class="col-3 mb-2 border border-success rounded" *ngFor="let emp of emplooyees">
+      <div
+        class="col-3 mb-2 border border-success rounded"
+        *ngFor="let emp of emplooyees"
+      >
         <app-employee-card [employee]="emp"></app-employee-card>
       </div>
     </div>

@@ -7,10 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { HelloComponent } from './hello/hello.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, HelloComponent, EmployeeCardComponent
+    AppComponent, HeaderComponent, HelloComponent, EmployeeCardComponent, EmployeeFormComponent
 
   ],
   imports: [
