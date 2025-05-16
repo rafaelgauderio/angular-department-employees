@@ -14,3 +14,7 @@ button {
   flex-direction: row;
   justify-content: flex-start;
 }
+
+label {
+  color: cadetblue;
+}
