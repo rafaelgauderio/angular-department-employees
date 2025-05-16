@@ -22,7 +22,7 @@ export class EmployeeFormComponent {
       department: this.department,
       id: ++this.lastId
     };
-
+    // object employee as a parameter here will be send to the the templeta as event
     this.employeeAdded.emit(employee);
 
   }
