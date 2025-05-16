@@ -17,7 +17,8 @@ export class AppComponent {
   nameInsert = '';
   age = 0;
   added = false;
-  emplooyees: string [] = [];
+  emplooyees: any  = [];
+  id=0;
   lastId = 1;
 
   getYear() {
@@ -25,18 +26,16 @@ export class AppComponent {
   }
 
   addEmployee(name: string) {
-    //console.log(`Adding new employee ${name}`);
-    this.nameInsert = name;    
+    //console.log(`Adding new employee ${name}`);        
     this.added = true;
-    this.emplooyees.push(this.nameInsert);
+    this.emplooyees.push({
+      nameInsert: this.name,
+      id: ++this.lastId
+  });
+
     this.name="";
 
-    /*
-    this.emplooyees.push({
-      nameInsert: this.nameInsert,
-      id: ++this.lastId
-    });
-    */
+   
   }
 
   removeEmployee() {

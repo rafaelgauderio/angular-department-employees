@@ -1,20 +1,8 @@
 <html>
-  <main class="main">
-    <app-header></app-header>
-    <app-hello></app-hello>
-    <h1>Projeto frontend funcionários e departamentos</h1>
-    <h3>Desenvolvido por {{nameInsert}} em {{year}}</h3>
-    <h3>Testing sum with biding: {{ 17 + 12 }}</h3>
-    <h3>The current year is {{getYear()}}!</h3>
+  <main class="main">  
+    <h1>Projeto frontend funcionários e departamentos</h1>    
   </main>
-  <div class="container">
-    <h1>Projeto frontend funcionários e departamentos</h1>
-    <div class="alert alert-success" role="alert" *ngIf="added">
-      Employee add (ngIf): <strong>name: {{nameInsert}}, age: {{age}}</strong>
-    </div>
-    <div class="alert alert-warning" role="alert" [hidden]="!added">
-      Employee add (hidden): <strong>name: {{nameInsert}}, age: {{age}}</strong>
-    </div>
+  <div class="container">   
     <div class="form-group">
       <label>Name: </label>
       <input
@@ -55,16 +43,16 @@
         Clear Data
       </button>
     </div>
-    <div class="row" style="margin-top: 10px;">
-      <div class="col-3" *ngFor="let emp of emplooyees">
+    <div class="row m-auto" style="margin-top: 10px;">
+      <div class="col-3 mb-2 border border-success rounded" *ngFor="let emp of emplooyees">
         <div class="card">
           <img
-            src="https://randomuser.me/api/portraits/men/17.jpg"
+            src="https://randomuser.me/api/portraits/men/{{emp.id}}.jpg"
             class="card-img-top"
             alt="..."
             style="margin-bottom: 5px;"
           />
-          <div class="card-block">{{emp}}</div>
+          <div class="card-block">Name: {{emp.nameInsert}}</div>
         </div>
       </div>
     </div>
