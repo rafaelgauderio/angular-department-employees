@@ -6,7 +6,7 @@
     <app-employee-form (employeeAdded)="whenAdding($event)"></app-employee-form>
     <div class="row m-auto" style="margin-top: 10px;">
       <div
-        class="col-2 mr-3 mb-3 border border-success rounded" [ngStyle]="{'background-color':'#ADD8E6'}"
+        class="col-3 mb-3 border border-success rounded" [ngStyle]="{'background-color':'#ADD8E6'}"
         *ngFor="let emp of emplooyees"
       >
         <app-employee-card [employee]="emp"></app-employee-card>

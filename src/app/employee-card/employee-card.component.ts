@@ -22,8 +22,13 @@ export class EmployeeCardComponent {
 
   getCardStyle() {
     return {
-      backgroundColor: this.employee.id%2===0 ? 'lightyellow' : 'lightgreen',
-      borderColor: this.employee.id%2===0 ? 'yellow': 'green'
+      backgroundColor: this.employee.id % 2 === 0 ? 'lightyellow' : 'lightgreen',
+      borderColor: this.employee.id % 2 === 0 ? 'yellow' : 'green',
+      borderWidth: this.employee.id % 2 == 0 ? '2px' : '1px'
     };
+  }
+
+  getClassList() {
+    return ['badge', 'badge-primary'];
   }
 }

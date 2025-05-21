@@ -5,6 +5,6 @@
     alt="..."
     style="margin-bottom: 5px;"
   />
-  <div class="card-block">Name: {{employee.name}}</div>
-  <div class="card-block">Department: {{employee.department}}</div>
+  <div class="card-block"><span class="mr-1 mb-1" [ngClass]="getClassList()">Name: </span>{{employee.name}} </div>
+  <div class="card-block"><span class="mr-1 badge badge-light">Department: </span>{{employee.department}}</div>
 </div>
