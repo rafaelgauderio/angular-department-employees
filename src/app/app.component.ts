@@ -11,8 +11,9 @@ import { HeaderComponent } from "./header/header.component";
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-    title = 'frontend-funcionarios-departamentos'; 
+    title = 'frontend-funcionarios-departamentos';
    emplooyees: Employee[] = [];
+activeIndex: any;
 
    whenAdding (emp : Employee) {
     this.emplooyees.push(emp);
