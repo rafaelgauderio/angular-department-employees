@@ -13,6 +13,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { BadgeModule } from 'primeng/badge';
 import { OverlayBadgeModule } from 'primeng/overlaybadge';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { OverlayBadgeModule } from 'primeng/overlaybadge';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,TabViewModule, AvatarModule, AvatarGroupModule, BadgeModule, OverlayBadgeModule
+    FormsModule, TabViewModule, AvatarModule, AvatarGroupModule,
+    BadgeModule, OverlayBadgeModule, ScrollPanelModule
+
 
   ],
   providers: [],
