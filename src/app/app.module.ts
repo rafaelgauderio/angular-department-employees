@@ -12,6 +12,7 @@ import { BadgeModule } from 'primeng/badge';
 import { SkeletonModule } from 'primeng/skeleton';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     FormsModule, TabViewModule, AvatarModule, AvatarGroupModule,
-    BadgeModule, SkeletonModule, InputTextModule, ButtonModule
+    BadgeModule, SkeletonModule, InputTextModule, ButtonModule,
+    TableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
