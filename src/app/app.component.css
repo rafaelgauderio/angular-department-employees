@@ -1,15 +1,22 @@
 main {
   display: flex;
   flex-direction: column;
-  background-color: cyan;
+  background-color:  #cc7a00;;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   border: 1px solid black;
+  margin: 5px;
 }
 
 h1 {
-  font-size: 2.125rem;
+  font-size: 2.5rem;
   color: var(--gray-900);
   font-family: Helvetica, Arial, sans-serif;
+  margin-top: 5px;
+  text-shadow: 2px 2px 4px #558abb;
+}
+
+h2 {
+  margin-top: 10px;
 }

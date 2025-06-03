@@ -1,1 +1,15 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #cc7a00;
+  margin: 10px;
+}
+
+label {
+  font-weight: 700;
+}
+
+#department {
+  display: block;
+  margin-top: 5px;
+}
 
