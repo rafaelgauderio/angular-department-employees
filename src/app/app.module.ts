@@ -4,14 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, NgForm } from '@angular/forms';
-
 import { TabViewModule } from 'primeng/tabview';
+//import { OverlayBadgeModule } from 'primeng/overlaybadge';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { BadgeModule } from 'primeng/badge';
-//import { OverlayBadgeModule } from 'primeng/overlaybadge';
-import { ScrollPanelModule } from 'primeng/scrollpanel';
-import { ButtonModule } from 'primeng/button';
+import { SkeletonModule } from 'primeng/skeleton';
 
 
 @NgModule({
@@ -21,7 +19,8 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, TabViewModule,
+    FormsModule, TabViewModule, AvatarModule, AvatarGroupModule,
+    BadgeModule, SkeletonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
