@@ -15,6 +15,9 @@ label {
 
 .col-id {
   width: 100px;
-  text-align: center;
-  
+  text-align: center;  
+}
+
+.col-actions {
+  padding: 5px;
 }
