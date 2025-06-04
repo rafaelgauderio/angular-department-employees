@@ -1,0 +1,99 @@
+<main>
+  <h1>Projeto frontend funcionários e departamentos</h1>
+</main>
+<div class="container">
+  <div class="grid">
+    <div class="col-12">
+      <h2>Funcionários</h2>
+    </div>
+    <div class="col-12 p-fluid">
+      <label>Nome</label>
+      <input type="text" placeholder="Nome do funcionário" pInputText />
+    </div>
+    <div class="col-12 p-fluid">
+      <label id="department">Departamento</label>
+      <input
+        type="text"
+        style="width: 270px"
+        placeholder="Departamento"
+        pInputText
+      />
+    </div>
+
+    <div class="col-12">
+      <button
+        type="submit"
+        label="Buscar"
+        class="btn btn-primary"
+        style="height: 50px; width: 100px"
+        pButton
+      ></button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12">
+      <p-table
+        [value]="arrayFuncionarios"
+        [paginator]="true"
+        [rows]="4"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} funcionários"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-id">Id</th>
+            <th>Nome do Funcionário</th>
+            <th>Departamento</th>
+            <th class="col-actions"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-funcionario>
+          <tr>
+            <td class="col-id">{{ funcionario.id }}</td>
+            <td>{{ funcionario.nome }}</td>
+            <td
+              [ngStyle]="{
+                color: funcionario.departamento == 'TI' ? 'green' : '#495057'
+              }"
+            >
+              {{ funcionario.departamento }}
+            </td>
+            <td class="col-actions">
+              <a
+                pButton
+                icon="pi pi-pencil"
+                pTooltip="Editar"
+                tooltipPosition="left"
+                class="btn-warning"
+                style="margin-right: 10px"
+              ></a>
+              <button
+                pButton
+                icon="pi pi-trash"
+                pTooltip="Remover"
+                tooltipPosition="right"
+                class="btn-danger rounded"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <a
+      pButton
+      label="Inserir Funcionario"
+      class="btn btn-success text text-white"
+    ></a>
+  </div>
+</div>
+
+<div class="row">
+  <div id="footer" class="col-12">
+    <h5 class="text-white bg-dark">Desenvolvido por Rafael de Luca</h5>
+  </div>
+</div>
+
