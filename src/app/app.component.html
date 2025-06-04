@@ -51,8 +51,8 @@
             <td>{{ funcionario.nome }}</td>
             <td [ngStyle]="{color: funcionario.departamento== 'TI' ? 'green' : '#495057'}">{{ funcionario.departamento }}</td>
             <td class="col-actions">
-              <a pButton icon="pi pi-pencil" class="btn-warning" style="margin-right: 10px;" ></a>
-              <button pButton icon="pi pi-trash" class="btn-danger rounded"></button>
+              <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="left" class="btn-warning" style="margin-right: 10px;" ></a>
+              <button pButton icon="pi pi-trash" pTooltip="Remover" tooltipPosition="right" class="btn-danger rounded"></button>
             </td>
           </tr>
         </ng-template>
