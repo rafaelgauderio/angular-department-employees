@@ -32,7 +32,10 @@
   </div>
   <div class="grid">
     <div class="col-12">
-      <p-table [value]="arrayFuncionarios">
+      <p-table [value]="arrayFuncionarios"
+      [paginator]="true" [rows]="4"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} funcionários">
         <ng-template pTemplate="header">
           <tr>
             <th class="col-id">Id</th>
