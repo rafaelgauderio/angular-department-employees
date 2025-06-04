@@ -13,8 +13,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
+import { PanelModule } from 'primeng/panel';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { TooltipModule } from 'primeng/tooltip';
     AppRoutingModule,
     FormsModule, TabViewModule, AvatarModule, AvatarGroupModule,
     BadgeModule, SkeletonModule, InputTextModule, ButtonModule,
-    TableModule , TooltipModule
+    TableModule , TooltipModule, PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

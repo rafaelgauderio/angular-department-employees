@@ -32,10 +32,13 @@
   </div>
   <div class="grid">
     <div class="col-12">
-      <p-table [value]="arrayFuncionarios"
-      [paginator]="true" [rows]="4"
-      [showCurrentPageReport]="true"
-      currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} funcionários">
+      <p-table
+        [value]="arrayFuncionarios"
+        [paginator]="true"
+        [rows]="4"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} funcionários"
+      >
         <ng-template pTemplate="header">
           <tr>
             <th class="col-id">Id</th>
@@ -49,10 +52,29 @@
           <tr>
             <td class="col-id">{{ funcionario.id }}</td>
             <td>{{ funcionario.nome }}</td>
-            <td [ngStyle]="{color: funcionario.departamento== 'TI' ? 'green' : '#495057'}">{{ funcionario.departamento }}</td>
+            <td
+              [ngStyle]="{
+                color: funcionario.departamento == 'TI' ? 'green' : '#495057'
+              }"
+            >
+              {{ funcionario.departamento }}
+            </td>
             <td class="col-actions">
-              <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="left" class="btn-warning" style="margin-right: 10px;" ></a>
-              <button pButton icon="pi pi-trash" pTooltip="Remover" tooltipPosition="right" class="btn-danger rounded"></button>
+              <a
+                pButton
+                icon="pi pi-pencil"
+                pTooltip="Editar"
+                tooltipPosition="left"
+                class="btn-warning"
+                style="margin-right: 10px"
+              ></a>
+              <button
+                pButton
+                icon="pi pi-trash"
+                pTooltip="Remover"
+                tooltipPosition="right"
+                class="btn-danger rounded"
+              ></button>
             </td>
           </tr>
         </ng-template>
@@ -66,5 +88,11 @@
       label="Inserir Funcionario"
       class="btn btn-success text text-white"
     ></a>
+  </div>
+</div>
+
+<div class="row">
+  <div id="footer" class="col-12">
+    <h2 class="text-white bg-dark">Desenvolvido por Rafael de Luca</h2>
   </div>
 </div>
