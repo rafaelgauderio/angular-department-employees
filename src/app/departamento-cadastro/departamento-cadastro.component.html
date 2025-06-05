@@ -5,7 +5,13 @@
     </div>
     <div class="col-12 p-fluid">
       <label>Nome do departamento</label>
-      <input  class="form-control rounded" type="text" appInputColor [userColor]="'var(--bs-teal)'" #textRef="inputColor"/>
+      <input
+        class="form-control rounded"
+        type="text"
+        appInputColor
+        [userColor]="'var(--bs-teal)'"
+        #textRef="inputColor"
+      />
     </div>
     <div class="col-12">
       <button
@@ -24,6 +30,16 @@
         (click)="textRef.withoutFocus()"
         pButton
       ></button>
+    </div>
+    <div class="col-12">
+      <h3>Dados do Departamento</h3>
+      <h5>{{ name | uppercase}}</h5>
+      <h5>{{ toCamelCase(name) }}</h5>
+      <h5>{{ registrationDate | date : 'short'}}</h5>
+      <h5>{{ updateDate | date : 'long'}}</h5>
+      <h5>{{ updateDate | date : 'full' | lowercase}}</h5>
+      <h5>{{ value | number: '.4-4'}}</h5>
+      <h5>{{ value02 | currency: 'BRL':true : '1.2-2'}}</h5>
     </div>
   </div>
 </div>
