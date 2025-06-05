@@ -8,8 +8,7 @@ export class InputColorDirective {
 
   @Input() userColor = 'silver';
 
-  @HostBinding('style.backgroundColor') color: string = '';
-
+  @HostBinding('style.backgroundColor') color: string = '';  
 
   @HostListener('focus') withFocus() {
     this.color = this.userColor;

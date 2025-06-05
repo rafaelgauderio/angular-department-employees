@@ -12,8 +12,8 @@
           ngModel
           name="nome"
           appInputColor
-          [userColor]="'var(--bs-teal)'"
-          #textRef="inputColor"
+          [userColor]="'var(--bs-light)'"
+          #textRef="inputColor"          
         />
         <label>Empresa</label>
         <select name="empresa" ngModel class="form-control rounded">
@@ -26,18 +26,6 @@
         </select>
         <div class="col-12">
           <button
-            label="Colocar cor"
-            class="btn btn-success ml-0 mr-3"
-            (click)="textRef.withFocus()"
-            pButton
-          ></button>
-          <button
-            label="Remove cor"
-            class="btn btn-warning mr-3"
-            (click)="textRef.withoutFocus()"
-            pButton
-          ></button>
-          <button
             type="submit"
             label="Salvar"
             class="btn btn-primary"
@@ -45,6 +33,20 @@
           ></button>
         </div>
       </form>
+      <div class="col-12">
+        <button
+          label="Colocar cor"
+          class="btn btn-success ml-0 mr-3"
+          (click)="textRef.withFocus()"
+          pButton
+        ></button>
+        <button
+          label="Remove cor"
+          class="btn btn-warning mr-3"
+          (click)="textRef.withoutFocus()"
+          pButton
+        ></button>
+      </div>
     </div>
 
     <!--
