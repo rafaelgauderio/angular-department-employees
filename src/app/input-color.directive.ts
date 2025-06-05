@@ -1,23 +1,20 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appInputColor]'
 })
 export class InputColorDirective {
 
-  constructor(
-    private elementRef: ElementRef,
-    private renderer: Renderer2
-  ) {
-  }
+  @Input() userColor = 'silver';
+
+  @HostBinding('style.backgroundColor') color: string = '';
+
+
   @HostListener('focus') withFocus() {
-    console.log(this.elementRef.nativeElement);
-    this.renderer.setStyle(this.elementRef.nativeElement,
-      'background-color', 'yellow');
+    this.color = this.userColor;
   }
 
   @HostListener('blur') withoutFocus() {
-    this.renderer.setStyle(this.elementRef.nativeElement,
-      'background-color', 'transparent');
+    this.color = 'transparent';
   }
 }
