@@ -17,13 +17,17 @@ import { TooltipModule } from 'primeng/tooltip';
 import { PanelModule } from 'primeng/panel';
 import { FuncionariosPesquisaComponent } from './funcionarios-pesquisa/funcionarios-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DepartamentosPesquisaComponent } from './departamentos-pesquisa/departamentos-pesquisa.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FuncionariosPesquisaComponent,
-    NavbarComponent
+    NavbarComponent,
+    DepartamentosPesquisaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

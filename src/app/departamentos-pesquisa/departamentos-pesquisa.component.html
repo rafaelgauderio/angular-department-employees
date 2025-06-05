@@ -1,23 +1,14 @@
-<main>
-  <h1>Projeto frontend funcionários e departamentos</h1>
+<main class="bg-info text-white">
+  <h1 >Projeto frontend Departamentos</h1>
 </main>
 <div class="container">
   <div class="grid">
     <div class="col-12">
-      <h2>Funcionários</h2>
+      <h2>Departamentos</h2>
     </div>
     <div class="col-12 p-fluid">
       <label>Nome</label>
-      <input type="text" placeholder="Nome do funcionário" pInputText />
-    </div>
-    <div class="col-12 p-fluid">
-      <label id="department">Departamento</label>
-      <input
-        type="text"
-        style="width: 270px"
-        placeholder="Departamento"
-        pInputText
-      />
+      <input type="text" placeholder="Nome do departamento" pInputText />
     </div>
 
     <div class="col-12">
@@ -33,31 +24,29 @@
   <div class="grid">
     <div class="col-12">
       <p-table
-        [value]="arrayFuncionarios"
+        [value]="departamentos"
         [paginator]="true"
-        [rows]="4"
+        [rows]="5"
         [showCurrentPageReport]="true"
-        currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} funcionários"
+        currentPageReportTemplate="Exibindo de {first} a {last} do total de {totalRecords} departamentos"
       >
         <ng-template pTemplate="header">
           <tr>
             <th class="col-id">Id</th>
-            <th>Nome do Funcionário</th>
-            <th>Departamento</th>
+            <th>Nome do Departamento</th>
             <th class="col-actions"></th>
           </tr>
         </ng-template>
 
-        <ng-template pTemplate="body" let-funcionario>
+        <ng-template pTemplate="body" let-dep>
           <tr>
-            <td class="col-id">{{ funcionario.id }}</td>
-            <td>{{ funcionario.nome }}</td>
+            <td class="col-id">{{ dep.id }}</td>
             <td
               [ngStyle]="{
-                color: funcionario.departamento == 'TI' ? 'green' : '#495057'
+                color: dep.nomeDepartamento == 'TI' ? 'green' : '#495057'
               }"
             >
-              {{ funcionario.departamento }}
+              {{ dep.nomeDepartamento }}
             </td>
             <td class="col-actions">
               <a
@@ -85,9 +74,11 @@
   <div class="col-12">
     <a
       pButton
-      label="Inserir Funcionario"
+      label="Novo Departamento"
       class="btn btn-success text text-white"
     ></a>
   </div>
 </div>
+
+
 
