@@ -1,2 +1,29 @@
-<label>Nome do departamento</label>
-<input type="text" appInputColor />
+<div class="container">
+  <div class="grid">
+    <div class="col-12">
+      <h2>Cadastro de Departamentos</h2>
+    </div>
+    <div class="col-12 p-fluid">
+      <label>Nome do departamento</label>
+      <input  class="form-control rounded" type="text" appInputColor [userColor]="'var(--bs-teal)'" #textRef="inputColor"/>
+    </div>
+    <div class="col-12">
+      <button
+        type="submit"
+        label="Colocar cor"
+        class="btn btn-primary mr-3"
+        style="height: 50px; width: auto;"
+        (click)="textRef.withFocus()"
+        pButton
+      ></button>
+      <button
+        type="submit"
+        label="Remove cor"
+        class="btn btn-warning"
+        style="height: 50px; width: auto;"
+        (click)="textRef.withoutFocus()"
+        pButton
+      ></button>
+    </div>
+  </div>
+</div>

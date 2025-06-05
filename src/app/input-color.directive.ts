@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appInputColor]'
+  selector: '[appInputColor]',
+  exportAs: 'inputColor'
 })
 export class InputColorDirective {
 
