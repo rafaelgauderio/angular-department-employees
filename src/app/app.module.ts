@@ -19,6 +19,8 @@ import { FuncionariosPesquisaComponent } from './funcionarios-pesquisa/funcionar
 import { NavbarComponent } from './navbar/navbar.component';
 import { DepartamentosPesquisaComponent } from './departamentos-pesquisa/departamentos-pesquisa.component';
 import { FooterComponent } from './footer/footer.component';
+import { DepartamentoCadastroComponent } from './departamento-cadastro/departamento-cadastro.component';
+import { InputColorDirective } from './input-color.directive';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FooterComponent } from './footer/footer.component';
     FuncionariosPesquisaComponent,
     NavbarComponent,
     DepartamentosPesquisaComponent,
-    FooterComponent
+    FooterComponent,
+    DepartamentoCadastroComponent,
+    InputColorDirective
   ],
   imports: [
     BrowserModule,
