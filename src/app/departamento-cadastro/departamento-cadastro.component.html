@@ -4,33 +4,50 @@
       <h2>Cadastro de Departamentos</h2>
     </div>
     <div class="col-12 p-fluid">
-      <label>Nome do departamento</label>
-      <input
-        class="form-control rounded"
-        type="text"
-        appInputColor
-        [userColor]="'var(--bs-teal)'"
-        #textRef="inputColor"
-      />
+      <form #departmentForm="ngForm" (ngSubmit)="salvar(departmentForm)">
+        <label>Nome do departamento</label>
+        <input
+          class="form-control rounded"
+          type="text"
+          ngModel
+          name="nome"
+          appInputColor
+          [userColor]="'var(--bs-teal)'"
+          #textRef="inputColor"
+        />
+        <label>Empresa</label>
+        <select name="empresa" ngModel class="form-control rounded">
+          <option value="">Selecionar</option>
+          <option>Matriz Porto Alegre</option>
+          <option>Filial Canoas</option>
+          <option>Filial Cornélio Procópio</option>
+          <option>Filial Curitiba</option>
+          <option>Filial Cascavel</option>
+        </select>
+        <div class="col-12">
+          <button
+            label="Colocar cor"
+            class="btn btn-success ml-0 mr-3"
+            (click)="textRef.withFocus()"
+            pButton
+          ></button>
+          <button
+            label="Remove cor"
+            class="btn btn-warning mr-3"
+            (click)="textRef.withoutFocus()"
+            pButton
+          ></button>
+          <button
+            type="submit"
+            label="Salvar"
+            class="btn btn-primary"
+            pButton
+          ></button>
+        </div>
+      </form>
     </div>
-    <div class="col-12">
-      <button
-        type="submit"
-        label="Colocar cor"
-        class="btn btn-primary mr-3"
-        style="height: 50px; width: auto;"
-        (click)="textRef.withFocus()"
-        pButton
-      ></button>
-      <button
-        type="submit"
-        label="Remove cor"
-        class="btn btn-warning"
-        style="height: 50px; width: auto;"
-        (click)="textRef.withoutFocus()"
-        pButton
-      ></button>
-    </div>
+
+    <!--
     <div class="col-12">
       <h3>Dados do Departamento</h3>
       <h5>{{ name | uppercase}}</h5>
@@ -41,5 +58,6 @@
       <h5>{{ value | number: '.4-4'}}</h5>
       <h5>{{ value02 | currency: 'BRL':true : '1.2-2'}}</h5>
     </div>
+    -->
   </div>
 </div>
