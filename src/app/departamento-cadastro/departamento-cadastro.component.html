@@ -13,16 +13,14 @@
           name="nome"
           appInputColor
           [userColor]="'var(--bs-light)'"
-          #textRef="inputColor"          
+          #textRef="inputColor"
         />
         <label>Empresa</label>
-        <select name="empresa" ngModel class="form-control rounded">
+        <select name="empresa" [ngModel]="defaultCompany" class="form-control rounded">
           <option value="">Selecionar</option>
-          <option>Matriz Porto Alegre</option>
-          <option>Filial Canoas</option>
-          <option>Filial Cornélio Procópio</option>
-          <option>Filial Curitiba</option>
-          <option>Filial Cascavel</option>
+          <option *ngFor="let emp of empresas"
+           [value]="emp">{{ emp }}
+          </option>
         </select>
         <div class="col-12">
           <button
