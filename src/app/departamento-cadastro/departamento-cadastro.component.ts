@@ -32,14 +32,15 @@ export class DepartamentoCadastroComponent {
   departamento = new Departamento();
 
   salvar(departmentForm: NgForm) {
-    this.departamento.nome = departmentForm.value.nomeDep;
-    this.departamento.empresa = departmentForm.value.empresaDep;
+    //this.departamento.nome = departmentForm.value.nomeDep;
+    //this.departamento.empresa = departmentForm.value.empresaDep;
     //console.log('Nome do departamento: ' + departmentForm.value.nome);
     //console.log('Empresa do departamento: ' + departmentForm.value.empresa);
     console.log(departmentForm.value);
     console.log(this.departamento);
   }
 
+  /*
   toCamelCase(str: string) {
     return str
       .replace(/(\s|-|_|\.)(\w)/g, function (match, sep, letter) {
@@ -49,4 +50,5 @@ export class DepartamentoCadastroComponent {
         return letter.toLowerCase();
       });
   }
+  */
 }
