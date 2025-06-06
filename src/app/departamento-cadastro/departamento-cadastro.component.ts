@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+class Departamento {
+  nome?: string = '';
+  empresa?: string = '';
+}
+
 @Component({
   selector: 'app-departamento-cadastro',
   templateUrl: './departamento-cadastro.component.html',
@@ -24,9 +29,15 @@ export class DepartamentoCadastroComponent {
   ];
   defaultCompany = 'Matriz Porto Alegre';
 
+  departamento = new Departamento();
+
   salvar(departmentForm: NgForm) {
-    console.log('Nome do departamento: ' + departmentForm.value.nome);
-    console.log('Empresa do departamento: ' + departmentForm.value.empresa);
+    this.departamento.nome = departmentForm.value.nomeDep;
+    this.departamento.empresa = departmentForm.value.empresaDep;
+    //console.log('Nome do departamento: ' + departmentForm.value.nome);
+    //console.log('Empresa do departamento: ' + departmentForm.value.empresa);
+    console.log(departmentForm.value);
+    console.log(this.departamento);
   }
 
   toCamelCase(str: string) {
