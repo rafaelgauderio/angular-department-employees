@@ -4,36 +4,58 @@
       <h2>Cadastro de Departamentos</h2>
     </div>
     <div class="col-12 p-fluid">
-      <h4>Imprimindo objeto como um json</h4>
-      <p>{{ departamento | json }}</p>
-    </div>
-    <div class="col-12 p-fluid">
-      <form #departmentForm="ngForm" (ngSubmit)="salvar(departmentForm)">
+      <form
+        autocomplete="off"
+        #departmentForm="ngForm"
+        (ngSubmit)="salvar(departmentForm)"
+      >
         <label>Nome do departamento</label>
         <input
           class="form-control rounded"
           type="text"
           [(ngModel)]="departamento.nome"
+          #nome="ngModel"
+          required
+          minlength="3"
           name="nomeDep"
           appInputColor
           [userColor]="'var(--bs-light)'"
           #textRef="inputColor"
         />
+        <div
+          *ngIf="nome.hasError('required')"
+          class="alert alert-danger p-fluid mt-2"
+        >
+          Preenchimento obrigatório do campo nome do cantor!
+        </div>
+        <div
+          *ngIf="nome.hasError('minlength')"
+          class="alert alert-danger p-fluid mt-2"
+        >
+          Nome de Departamento deve ter pelo menos 3 caracteres!
+        </div>
+
         <label>Empresa</label>
         <select
+          class="form-control rounded"
           name="empresaDep"
           [ngModel]="defaultCompany"
           [(ngModel)]="departamento.empresa"
-          class="form-control rounded"
+          required
+          #empresa="ngModel"
         >
           <option value="">Selecionar</option>
           <option *ngFor="let emp of empresas" [value]="emp">{{ emp }}</option>
         </select>
+        <div *ngIf="empresa.invalid" class="alert alert-danger p-fluid mt-2">
+          Favor selecionar a qual empresa pertence o departamento
+        </div>
         <div class="col-12">
           <button
             type="submit"
             label="Salvar"
             class="btn btn-primary"
+            [disabled]="departmentForm.invalid"
             pButton
           ></button>
         </div>
@@ -51,6 +73,10 @@
           (click)="textRef.withoutFocus()"
           pButton
         ></button>
+        <div class="col-12 p-fluid mt-5">
+          <h4>Imprimindo objeto como um json</h4>
+          <p>{{ departamento | json }}</p>
+        </div>
       </div>
     </div>
 
