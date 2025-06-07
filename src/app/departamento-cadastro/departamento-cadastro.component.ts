@@ -38,6 +38,8 @@ export class DepartamentoCadastroComponent {
     //console.log('Empresa do departamento: ' + departmentForm.value.empresa);
     console.log(departmentForm.value);
     console.log(this.departamento);
+    // para limpar os campos do formulario e a estilização
+    departmentForm.reset({empresa:''});
   }
 
   /*
